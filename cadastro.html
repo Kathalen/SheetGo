@@ -55,7 +55,6 @@
                   <input type="text" id="address" class="validate" name="address" placeholder="type your address*" required>
               </div> 
 
-              
               <input type="submit" id="btn" name="acao" value="Submit" > 
 
             </form>
@@ -82,7 +81,7 @@
               var valueAddress = inputAddress.value;
 
               google.script.run.withSuccessHandler(done => {
-                alert ("Registration successfully completed!")
+                alert ("Registration successfully completed! To see the registered go to 'Registered' page! ")
               }).withFailureHandler(er => {
                 alert(er)
               }).gravaValores(
