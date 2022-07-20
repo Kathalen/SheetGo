@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html>
+    <?!= include("style.css")?>
+    <head>
+      <base target="_top">
+    </head>
+
+    <body id="bodyCadastrados">
+      
+        <div>
+            <nav class="navColor">
+              <div class="divNav" class="nav-wrapper" >
+                <div class="logo-image left">
+                  <a  href="<?= ScriptApp.getService().getUrl(); ?>">
+                    <img src="https://static.sheetgo.com/wp-content/uploads/2020/05/sheetgo-logo-20200521.svg">
+                  </a>                        
+                </div>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="<?= ScriptApp.getService().getUrl(); ?>" class="aNav" 
+                    class="breadcrumb">Home page</a></li>
+                  <li><a href="<?= ScriptApp.getService().getUrl(); ?>?x=formd" class="aNav"
+                    class="breadcrumb">Registered</a></li>
+                  <li><a href="<?= ScriptApp.getService().getUrl(); ?>?v=form" class="aNav"
+                    class="breadcrumb">New Register</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+        <div>
+          <h1 style="text-align:center">Registered</h1>
+          <form id="formCadastrados" >
+
+            <table id="tableCadastrados" >
+              <?var tableData = getSheetData();?>
+              <?for(var i = 0; i < tableData.length; i++) { ?>
+              <?if(i == 0) { ?>
+                <tr>
+                <?for(var j = 0; j < tableData[i].length; j++) { ?>
+                <th ><?= tableData[i][j] ?></th>            
+                <? } ?>
+                </tr>
+                <? } else { ?>
+                <tr>
+                <?for(var j = 0; j < tableData[i].length; j++) { ?>
+                <td ><?= tableData[i][j] ?></td>
+                <? } ?>
+                </tr>
+                <? } ?>
+                <? } ?>
+            </table>
+
+          </form>  
+        </div>
+      </body>
+  </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <html>
+    <?!= include("style.css")?>
+    <head>
+      <base target="_top">
+    </head>
+
+    <body id="bodyIndex">   
+      <div>
+          <nav class="navColor">
+            <div class="divNav" class="nav-wrapper" >
+              <div class="logo-image left">
+                <a  href="<?= ScriptApp.getService().getUrl(); ?>">
+                  <img src="https://static.sheetgo.com/wp-content/uploads/2020/05/sheetgo-logo-20200521.svg">
+                </a>                        
+              </div>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="<?= ScriptApp.getService().getUrl(); ?>" class="aNav" 
+                  class="breadcrumb">Home page</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl(); ?>?x=formd" class="aNav"
+                  class="breadcrumb">Registered</a></li>
+                <li><a href="<?= ScriptApp.getService().getUrl(); ?>?v=form" class="aNav"
+                  class="breadcrumb">New Register</a></li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+        <div>
+          <a id="aIndex">
+            <img id="imgIndex" src="https://www.ancoris.com/hubfs/Partner%20logos/logo-horizontal-sheetgo-fullcolor-dark.png">
+          </a> 
+        </div>
+      <div id="divIndex">  
+        <h1 id="h1Index" > Welcome </h1> 
+        
+        <div class="field">
+        <p id="pIndex" > what do you want to do next? </p>
+      
+
+        <div style="margin-top: -5px">
+          <a href="<?= ScriptApp.getService().getUrl(); ?>?v=form" class="waves-effect waves-light btn">A new register</a>
+
+          <a href="<?= ScriptApp.getService().getUrl(); ?>?x=formd" class="waves-effect waves-light btn">See Registered</a>
+        </div>
+      </div> 
+        
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+
+  </html>

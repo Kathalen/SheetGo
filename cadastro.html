@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+  <html>
+    <?!= include("style.css")?>
+    <head>
+      <base target="_top">
+    </head>
+
+    <body id="bodyCadastro"> 
+          <div>
+            <nav class="navColor">
+              <div class="divNav" class="nav-wrapper" >
+                <div class="logo-image left">
+                  <a  href="<?= ScriptApp.getService().getUrl(); ?>">
+                    <img src="https://static.sheetgo.com/wp-content/uploads/2020/05/sheetgo-logo-20200521.svg">
+                  </a>                        
+                </div>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="<?= ScriptApp.getService().getUrl(); ?>" class="aNav" 
+                    class="breadcrumb">Home page</a></li>
+                  <li><a href="<?= ScriptApp.getService().getUrl(); ?>?x=formd" class="aNav"
+                    class="breadcrumb">Registered</a></li>
+                  <li><a href="<?= ScriptApp.getService().getUrl(); ?>?v=form" class="aNav"
+                    class="breadcrumb">New Register</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+
+          <div id="divCadastro">
+            <form id="formCadastro" class="formuCadastro"  onsubmit="pegaValores(); return false;" method="post"> 
+              <h2> New Register</h2> 
+              
+              <div class="field">
+                  <label for="id">Your id:</label>
+                  <input type="text" class="validate" id="id1" name="id" placeholder="type your id*" required>
+              </div>
+              
+              <div class="field">
+                  <label for="name">Your name:</label>
+                  <input type="text" class="validate" id="name" name="name" placeholder="type your name*" required>
+              </div>
+
+              <div class="field">
+                  <label for="email" data-error="Preencha o campo Email">Your e-mail:</label>
+                  <input type="email" id="email" class="validate" name="email" placeholder="type your E-Mail*" required>
+              </div>     
+
+              <div class="field">
+                  <label for="phone">Your phone:</label>
+                  <input type="text" id="phone" class="validate" name="phone" placeholder="type your phone*" required>
+              </div>   
+
+              <div class="field">
+                  <label for="address">Your address:</label>
+                  <input type="text" id="address" class="validate" name="address" placeholder="type your address*" required>
+              </div> 
+
+              
+              <a type="submit" id="btn" name="acao" value="Submit" href="<?= ScriptApp.getService().getUrl(); ?>?x=return1" > Submit </a>
+
+            </form>
+
+          </div>
+
+        <script>
+
+            /*
+            *função que pega o valor da area do formulario e chama a gravaValores() 
+            *para gravar na tabela e depois retornar a area em branco no formulario
+            */
+            function pegaValores(){
+              var inputId =  document.getElementById("id1");
+              var inputName =  document.getElementById("name");
+              var inputEmail =  document.getElementById("email");
+              var inputPhone =  document.getElementById("phone");
+              var inputAddress =  document.getElementById("address");
+
+              var valueId = inputId.value;
+              var valueName = inputName.value;
+              var valueEmail = inputEmail.value;
+              var valuePhone = inputPhone.value;
+              var valueAddress = inputAddress.value;
+
+              google.script.run.withSuccessHandler(done => {
+                alert ("Registration successfully completed!")
+              }).withFailureHandler(er => {
+                alert(er)
+              }).gravaValores(
+                valueId,
+                valueName,
+                valueEmail,
+                valuePhone,
+                valueAddress
+              );
+
+              inputId.value = '';
+              inputName.value = '';
+              inputEmail.value = '';
+              inputPhone.value = '';
+              inputAddress.value = '';
+            } 
+
+        </script>
+
+    </body>
+    
+  </html>
