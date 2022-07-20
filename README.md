@@ -7,7 +7,7 @@ index.html
 
 
 cadastro.html
-![image](https://user-images.githubusercontent.com/97971151/179870884-f26dba81-4e66-4252-90d1-50f23c1f8ad0.png)
+![image](https://user-images.githubusercontent.com/97971151/180013637-878ccf26-860a-432c-8e10-481a56305650.png)
 
 cadastrados.html
 ![image](https://user-images.githubusercontent.com/97971151/179870589-0da27ef3-0b82-4a4e-a436-cd4fd8f71b75.png)
